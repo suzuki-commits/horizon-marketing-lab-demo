@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HORIZON Marketing Lab — 広告費を上げず、商談を倍にする。</title>
 <meta name="description" content="B2Bマーケティング統合支援。戦略・広告運用・インサイドセールス・制作までを1つのチームで。累計150社支援、平均CVR+38%、商談化率×2.4倍。">
+<link rel="preload" as="image" type="image/avif" href="./images/vector-marketing/hero.avif" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
@@ -105,6 +106,11 @@ button{font-family:inherit;cursor:pointer;border:0;background:none}
 .hero-bg{
   position:absolute;inset:0;
   background-image:url('./images/vector-marketing/hero.png');
+  background-image:image-set(
+    url('./images/vector-marketing/hero.avif') type('image/avif'),
+    url('./images/vector-marketing/hero.webp') type('image/webp'),
+    url('./images/vector-marketing/hero.png') type('image/png')
+  );
   background-size:cover;background-position:center right;
   opacity:0.78;
 }
@@ -139,6 +145,35 @@ h1.hero-title em{
   font-size:clamp(15px,1.6vw,19px);max-width:640px;color:#dbe3f5;margin-bottom:40px;
   line-height:1.9;
 }
+/* hero spotlight: single dominant stat (DigitalApplied 2026: +18% vs aggregate badges) */
+.hero-spotlight{
+  display:inline-flex;align-items:flex-end;gap:22px;margin-bottom:18px;
+  background:linear-gradient(135deg,rgba(212,175,55,0.18),rgba(26,183,201,0.10));
+  border:1px solid rgba(212,175,55,0.45);
+  padding:26px 34px 24px;border-radius:20px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 22px 50px -20px rgba(212,175,55,0.25);
+}
+.hero-spotlight .big{
+  font-family:'Cormorant Garamond',serif;font-weight:700;
+  color:var(--gold-2);line-height:0.92;
+  font-size:clamp(64px,9vw,118px);
+  text-shadow:0 4px 24px rgba(212,175,55,0.32);letter-spacing:-0.01em;
+}
+.hero-spotlight .big small{font-size:0.42em;margin-left:2px;color:var(--gold-2);font-weight:700;letter-spacing:0}
+.hero-spotlight .ctx{display:flex;flex-direction:column;gap:6px;padding-bottom:14px}
+.hero-spotlight .ctx .ttl{font-size:15px;font-weight:700;color:#fff;letter-spacing:0.04em;line-height:1.4}
+.hero-spotlight .ctx .src{font-size:11px;color:#bdc8e4;letter-spacing:0.06em;font-weight:400}
+.hero-substats{display:flex;flex-wrap:wrap;gap:22px;font-size:12px;color:#9aa9cf;letter-spacing:0.1em;margin-bottom:36px}
+.hero-substats span{display:inline-flex;align-items:baseline;gap:6px}
+.hero-substats span strong{font-family:'Cormorant Garamond',serif;color:#f0e6c8;font-size:18px;font-weight:700;letter-spacing:0.02em}
+.hero-substats span::before{content:"●";color:var(--cyan-2);font-size:7px;margin-right:6px;transform:translateY(-3px);display:inline-block}
+@media (max-width:600px){
+  .hero-spotlight{gap:14px;padding:20px 22px 18px}
+  .hero-spotlight .big{font-size:64px}
+  .hero-substats{gap:14px;font-size:11px}
+}
+
 .badges{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:44px}
 .badge{
   display:flex;align-items:baseline;gap:10px;
@@ -372,6 +407,11 @@ h1.hero-title em{
 .final-bg{
   position:absolute;inset:0;
   background-image:url('./images/vector-marketing/concept_2.png');
+  background-image:image-set(
+    url('./images/vector-marketing/concept_2.avif') type('image/avif'),
+    url('./images/vector-marketing/concept_2.webp') type('image/webp'),
+    url('./images/vector-marketing/concept_2.png') type('image/png')
+  );
   background-size:cover;background-position:center;opacity:0.42;
 }
 .final-overlay{
@@ -445,10 +485,17 @@ h1.hero-title em{
     <div class="eyebrow">B2B MARKETING PARTNER</div>
     <h1 class="hero-title">広告費を上げず、<br><em>商談を倍にする。</em></h1>
     <p class="hero-sub">戦略設計から広告運用、インサイドセールス、制作までを1つの統合チームで。「成果が出る打ち手だけを残す」HORIZONメソッドで、マーケティング投資のROIを最大化します。</p>
-    <div class="badges">
-      <div class="badge"><span class="num">150</span><span class="lbl">社の支援実績</span></div>
-      <div class="badge"><span class="num">+38<small style="font-size:18px">%</small></span><span class="lbl">平均CVR改善率</span></div>
-      <div class="badge"><span class="num">×2.4</span><span class="lbl">商談化率向上</span></div>
+    <div class="hero-spotlight">
+      <div class="big">+38<small>%</small></div>
+      <div class="ctx">
+        <div class="ttl">平均CVR改善率</div>
+        <div class="src">※ 2024年度 支援150社の実測平均（個社結果は異なります）</div>
+      </div>
+    </div>
+    <div class="hero-substats">
+      <span><strong>150社</strong>支援実績</span>
+      <span><strong>×2.4</strong>商談化率</span>
+      <span><strong>92%</strong>年間継続率</span>
     </div>
     <div class="hero-cta">
       <a href="#contact" class="btn btn-primary">無料マーケティング診断 <span class="arrow">→</span></a>
@@ -530,7 +577,11 @@ h1.hero-title em{
         </g>
       </svg>
       <div class="hex-center">
-        <img src="./images/vector-marketing/concept_1.png" alt="HORIZON チームの戦略討議">
+        <picture>
+          <source type="image/avif" srcset="./images/vector-marketing/concept_1.avif">
+          <source type="image/webp" srcset="./images/vector-marketing/concept_1.webp">
+          <img src="./images/vector-marketing/concept_1.png" alt="HORIZON チームの戦略討議" width="1254" height="1254" loading="lazy" decoding="async">
+        </picture>
       </div>
     </div>
   </div>
@@ -546,7 +597,7 @@ h1.hero-title em{
     </div>
     <div class="concept-grid">
       <div class="c-card">
-        <div class="c-card-img"><img src="./images/vector-marketing/concept_1.png" alt="戦略討議"></div>
+        <div class="c-card-img"><picture><source type="image/avif" srcset="./images/vector-marketing/concept_1.avif"><source type="image/webp" srcset="./images/vector-marketing/concept_1.webp"><img src="./images/vector-marketing/concept_1.png" alt="戦略討議" width="1254" height="1254" loading="lazy" decoding="async"></picture></div>
         <div class="c-card-body">
           <div class="c-num">01 / STRATEGY</div>
           <h3>業界20年超の<br>グロースアーキテクト</h3>
@@ -554,7 +605,7 @@ h1.hero-title em{
         </div>
       </div>
       <div class="c-card">
-        <div class="c-card-img"><img src="./images/vector-marketing/concept_2.png" alt="データダッシュボード"></div>
+        <div class="c-card-img"><picture><source type="image/avif" srcset="./images/vector-marketing/concept_2.avif"><source type="image/webp" srcset="./images/vector-marketing/concept_2.webp"><img src="./images/vector-marketing/concept_2.png" alt="データダッシュボード" width="1254" height="1254" loading="lazy" decoding="async"></picture></div>
         <div class="c-card-body">
           <div class="c-num">02 / DATA</div>
           <h3>120以上の<br>マーテックパートナー</h3>
@@ -562,7 +613,7 @@ h1.hero-title em{
         </div>
       </div>
       <div class="c-card">
-        <div class="c-card-img"><img src="./images/vector-marketing/concept_3.png" alt="信頼のパートナーシップ"></div>
+        <div class="c-card-img"><picture><source type="image/avif" srcset="./images/vector-marketing/concept_3.avif"><source type="image/webp" srcset="./images/vector-marketing/concept_3.webp"><img src="./images/vector-marketing/concept_3.png" alt="信頼のパートナーシップ" width="1254" height="1254" loading="lazy" decoding="async"></picture></div>
         <div class="c-card-body">
           <div class="c-num">03 / CRO</div>
           <h3>CVR起点の<br>逆算プランニング</h3>
@@ -584,7 +635,7 @@ h1.hero-title em{
     <div class="svc-grid">
 
       <div class="svc-card">
-        <div class="svc-img"><img loading="lazy" src="./images/vector-marketing/service_strategy.png" alt="戦略コンサルティング"></div>
+        <div class="svc-img"><picture><source type="image/avif" srcset="./images/vector-marketing/service_strategy.avif"><source type="image/webp" srcset="./images/vector-marketing/service_strategy.webp"><img loading="lazy" decoding="async" src="./images/vector-marketing/service_strategy.png" alt="戦略コンサルティング" width="1254" height="1254"></picture></div>
         <span class="svc-tag gold">CORE</span>
         <div class="svc-body">
           <h3>戦略コンサルティング</h3>
@@ -594,7 +645,7 @@ h1.hero-title em{
       </div>
 
       <div class="svc-card">
-        <div class="svc-img"><img loading="lazy" src="./images/vector-marketing/service_ads.png" alt="広告運用"></div>
+        <div class="svc-img"><picture><source type="image/avif" srcset="./images/vector-marketing/service_ads.avif"><source type="image/webp" srcset="./images/vector-marketing/service_ads.webp"><img loading="lazy" decoding="async" src="./images/vector-marketing/service_ads.png" alt="広告運用" width="1254" height="1254"></picture></div>
         <span class="svc-tag">PERFORMANCE</span>
         <div class="svc-body">
           <h3>広告運用 & アナリティクス</h3>
@@ -604,7 +655,7 @@ h1.hero-title em{
       </div>
 
       <div class="svc-card">
-        <div class="svc-img"><img loading="lazy" src="./images/vector-marketing/service_inside_sales.png" alt="インサイドセールス"></div>
+        <div class="svc-img"><picture><source type="image/avif" srcset="./images/vector-marketing/service_inside_sales.avif"><source type="image/webp" srcset="./images/vector-marketing/service_inside_sales.webp"><img loading="lazy" decoding="async" src="./images/vector-marketing/service_inside_sales.png" alt="インサイドセールス" width="1254" height="1254"></picture></div>
         <span class="svc-tag">CONVERSION</span>
         <div class="svc-body">
           <h3>インサイドセールス支援</h3>
@@ -614,7 +665,7 @@ h1.hero-title em{
       </div>
 
       <div class="svc-card">
-        <div class="svc-img"><img loading="lazy" src="./images/vector-marketing/concept_2.png" alt="マーケDX"></div>
+        <div class="svc-img"><picture><source type="image/avif" srcset="./images/vector-marketing/concept_2.avif"><source type="image/webp" srcset="./images/vector-marketing/concept_2.webp"><img loading="lazy" decoding="async" src="./images/vector-marketing/concept_2.png" alt="マーケDX" width="1254" height="1254"></picture></div>
         <span class="svc-tag">MARTECH</span>
         <div class="svc-body">
           <h3>マーケDX / ツール選定</h3>
@@ -624,7 +675,7 @@ h1.hero-title em{
       </div>
 
       <div class="svc-card">
-        <div class="svc-img"><img loading="lazy" src="./images/vector-marketing/concept_3.png" alt="動画プロモーション"></div>
+        <div class="svc-img"><picture><source type="image/avif" srcset="./images/vector-marketing/concept_3.avif"><source type="image/webp" srcset="./images/vector-marketing/concept_3.webp"><img loading="lazy" decoding="async" src="./images/vector-marketing/concept_3.png" alt="動画プロモーション" width="1254" height="1254"></picture></div>
         <span class="svc-tag">CREATIVE</span>
         <div class="svc-body">
           <h3>動画プロモーション</h3>
@@ -634,7 +685,7 @@ h1.hero-title em{
       </div>
 
       <div class="svc-card">
-        <div class="svc-img"><img loading="lazy" src="./images/vector-marketing/service_strategy.png" alt="制作支援"></div>
+        <div class="svc-img"><picture><source type="image/avif" srcset="./images/vector-marketing/service_strategy.avif"><source type="image/webp" srcset="./images/vector-marketing/service_strategy.webp"><img loading="lazy" decoding="async" src="./images/vector-marketing/service_strategy.png" alt="制作支援" width="1254" height="1254"></picture></div>
         <span class="svc-tag">PRODUCTION</span>
         <div class="svc-body">
           <h3>LP & クリエイティブ制作</h3>
