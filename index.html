@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HORIZON Marketing Lab — 広告費を上げず、商談を倍にする。</title>
+<meta name="description" content="B2Bマーケティング統合支援。戦略・広告運用・インサイドセールス・制作までを1つのチームで。累計150社支援、平均CVR+38%、商談化率×2.4倍。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1B3F;
+  --navy-2:#142a5c;
+  --navy-3:#1b3676;
+  --ink:#0A0A0A;
+  --off:#F4F6FB;
+  --white:#FFFFFF;
+  --cyan:#1AB7C9;
+  --cyan-2:#3DD3E4;
+  --gold:#D4AF37;
+  --gold-2:#E6C24F;
+  --cta:#FF6B35;
+  --cta-2:#FF8856;
+  --mute:#7a8aa8;
+  --line:rgba(255,255,255,0.12);
+  --line-d:rgba(11,27,63,0.12);
+  --shadow:0 30px 60px -20px rgba(11,27,63,0.35);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.75;
+  font-feature-settings:"palt";
+}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ========== Demo Disclaimer Top ========== */
+.demo-disclaimer{
+  position:relative;
+  background:linear-gradient(90deg,#1a1a1a,#3a2418);
+  color:#FFD7BA;
+  font-size:13px;
+  text-align:center;
+  padding:10px 16px;
+  letter-spacing:0.04em;
+  border-bottom:1px solid rgba(255,107,53,0.4);
+}
+.demo-disclaimer strong{color:var(--cta-2);letter-spacing:0.12em;margin-right:8px}
+
+/* ========== Sticky Header ========== */
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,27,63,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  color:var(--white);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1280px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;letter-spacing:0.12em}
+.logo-mark{
+  width:34px;height:34px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,var(--cyan),var(--navy));
+  position:relative;flex-shrink:0;
+  box-shadow:0 0 24px rgba(26,183,201,0.55);
+}
+.logo-mark::after{
+  content:"";position:absolute;left:-2px;right:-2px;top:50%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.nav{display:flex;gap:28px;font-size:13px;letter-spacing:0.1em}
+.nav a{color:#cbd6f0;transition:color .2s}
+.nav a:hover{color:var(--cyan-2)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-weight:700;letter-spacing:0.06em;
+  padding:14px 28px;border-radius:999px;
+  transition:transform .15s, box-shadow .15s, background .2s;
+}
+.btn-mini{padding:10px 18px;font-size:13px}
+.btn-primary{background:var(--cta);color:#fff;box-shadow:0 12px 24px -8px rgba(255,107,53,0.55)}
+.btn-primary:hover{transform:translateY(-2px);background:var(--cta-2)}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.45)}
+.btn-ghost:hover{background:rgba(255,255,255,0.08);border-color:var(--cyan-2);color:var(--cyan-2)}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-dark:hover{transform:translateY(-2px);background:var(--navy-2)}
+.btn .arrow{display:inline-block;transition:transform .2s}
+.btn:hover .arrow{transform:translateX(4px)}
+
+@media (max-width:760px){
+  .nav{display:none}
+}
+
+/* ========== Hero ========== */
+.hero{
+  position:relative;color:#fff;overflow:hidden;
+  background:var(--navy);
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-image:url('./images/vector-marketing/hero.png');
+  background-size:cover;background-position:center right;
+  opacity:0.78;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(110deg,rgba(11,27,63,0.95) 0%,rgba(11,27,63,0.78) 45%,rgba(11,27,63,0.30) 100%);
+}
+.hero-inner{
+  position:relative;z-index:2;
+  padding:110px 24px 140px;
+  max-width:1280px;margin:0 auto;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;letter-spacing:0.32em;color:var(--cyan-2);
+  margin-bottom:24px;
+}
+.eyebrow::before{
+  content:"";width:36px;height:1px;background:var(--cyan-2);display:inline-block;
+}
+h1.hero-title{
+  font-size:clamp(34px,5.4vw,68px);
+  font-weight:900;letter-spacing:0.02em;line-height:1.18;
+  margin-bottom:24px;max-width:880px;
+}
+h1.hero-title em{
+  font-style:normal;color:var(--cyan-2);
+  background:linear-gradient(90deg,var(--cyan-2),var(--gold-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{
+  font-size:clamp(15px,1.6vw,19px);max-width:640px;color:#dbe3f5;margin-bottom:40px;
+  line-height:1.9;
+}
+.badges{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:44px}
+.badge{
+  display:flex;align-items:baseline;gap:10px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid var(--line);backdrop-filter:blur(8px);
+  padding:14px 22px;border-radius:999px;
+}
+.badge .num{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:var(--gold-2);line-height:1}
+.badge .lbl{font-size:12px;letter-spacing:0.14em;color:#bdc8e4}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px}
+.hero-cta .btn{padding:18px 34px;font-size:15px}
+.hero-trust{margin-top:36px;font-size:12px;color:#9aa9cf;letter-spacing:0.12em}
+
+/* ========== Pain Strip ========== */
+.pain{
+  background:#0A0A0A;color:#fff;padding:54px 0;
+  border-top:1px solid rgba(212,175,55,0.18);
+  border-bottom:1px solid rgba(212,175,55,0.18);
+}
+.pain-head{text-align:center;margin-bottom:32px}
+.pain-head h2{font-size:clamp(22px,2.6vw,30px);font-weight:700;letter-spacing:0.04em}
+.pain-head h2 span{color:var(--cta-2)}
+.pain-list{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.pain-item{
+  text-align:center;padding:18px 14px;font-size:13.5px;line-height:1.7;
+  border-left:1px solid rgba(255,255,255,0.08);
+  color:#d3d8e6;
+}
+.pain-item:first-child{border-left:0}
+.pain-x{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  background:rgba(255,107,53,0.15);color:var(--cta);
+  font-weight:900;margin-bottom:10px;
+}
+@media (max-width:880px){
+  .pain-list{grid-template-columns:repeat(2,1fr)}
+  .pain-item{border-left:0;border-bottom:1px solid rgba(255,255,255,0.06)}
+}
+
+/* ========== Skills Hexagon ========== */
+.skills{
+  background:linear-gradient(180deg,var(--off),#fff);
+  padding:110px 0;
+}
+.section-head{text-align:center;margin-bottom:60px}
+.section-eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:0.32em;color:var(--cyan);
+  margin-bottom:16px;
+}
+.section-head h2{font-size:clamp(28px,3.6vw,44px);font-weight:900;letter-spacing:0.02em;line-height:1.3;color:var(--navy)}
+.section-head h2 em{font-style:normal;color:var(--cta)}
+.section-head p{margin-top:18px;font-size:15px;color:#5b6a8c;max-width:680px;margin-left:auto;margin-right:auto;line-height:2}
+
+.hex-wrap{position:relative;max-width:760px;margin:0 auto}
+.hex-svg{width:100%;height:auto;display:block}
+.hex-center{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:32%;aspect-ratio:1/1;border-radius:50%;
+  overflow:hidden;border:6px solid #fff;
+  box-shadow:0 20px 60px -15px rgba(11,27,63,0.45);
+  background:var(--navy);
+}
+.hex-center::after{
+  content:"HORIZON";
+  position:absolute;left:50%;bottom:18%;transform:translateX(-50%);
+  font-family:'Cormorant Garamond',serif;font-weight:700;letter-spacing:0.32em;
+  font-size:13px;color:var(--gold-2);
+  text-shadow:0 2px 6px rgba(0,0,0,0.6);
+}
+.hex-center img{width:100%;height:100%;object-fit:cover;opacity:0.55}
+
+/* ========== Concept ========== */
+.concept{padding:110px 0;background:#fff}
+.concept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.c-card{
+  border-radius:18px;overflow:hidden;
+  background:#fff;border:1px solid var(--line-d);
+  box-shadow:0 16px 40px -20px rgba(11,27,63,0.18);
+  transition:transform .25s, box-shadow .25s;
+}
+.c-card:hover{transform:translateY(-6px);box-shadow:0 28px 60px -20px rgba(11,27,63,0.3)}
+.c-card-img{aspect-ratio:4/3;overflow:hidden}
+.c-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.c-card:hover .c-card-img img{transform:scale(1.05)}
+.c-card-body{padding:28px 26px 32px}
+.c-num{
+  font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:0.32em;
+  color:var(--cyan);margin-bottom:10px;
+}
+.c-card h3{font-size:19px;font-weight:700;color:var(--navy);margin-bottom:12px;line-height:1.5}
+.c-card p{font-size:14px;color:#56678a;line-height:2}
+@media (max-width:880px){.concept-grid{grid-template-columns:1fr}}
+
+/* ========== Services Grid ========== */
+.services{padding:110px 0;background:var(--off)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.svc-card{
+  background:#fff;border-radius:16px;overflow:hidden;
+  position:relative;
+  box-shadow:0 14px 36px -18px rgba(11,27,63,0.2);
+  transition:transform .25s, box-shadow .25s;
+}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 26px 60px -18px rgba(11,27,63,0.32)}
+.svc-img{aspect-ratio:4/3;overflow:hidden;background:var(--navy)}
+.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.svc-card:hover .svc-img img{transform:scale(1.06)}
+.svc-tag{
+  position:absolute;top:14px;left:14px;
+  background:var(--navy);color:#fff;font-size:11px;font-weight:700;
+  letter-spacing:0.18em;padding:7px 14px;border-radius:999px;
+  box-shadow:0 4px 12px rgba(11,27,63,0.4);
+}
+.svc-tag.gold{background:var(--gold);color:var(--navy)}
+.svc-body{padding:24px 24px 28px}
+.svc-body h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.svc-body p{font-size:13.5px;color:#56678a;line-height:1.9;margin-bottom:14px}
+.svc-meta{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--mute);border-top:1px solid var(--line-d);padding-top:14px}
+.svc-meta .price{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--cta);font-weight:600;letter-spacing:0.04em}
+@media (max-width:980px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.svc-grid{grid-template-columns:1fr}}
+
+/* ========== How To Start ========== */
+.howto{padding:110px 0;background:#fff}
+.howto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
+.step{
+  position:relative;
+  background:linear-gradient(180deg,#fff,#f7f9ff);
+  border:1px solid var(--line-d);
+  border-radius:18px;padding:34px 28px 28px;
+}
+.step-num{
+  position:absolute;top:-22px;left:28px;
+  width:46px;height:46px;border-radius:50%;
+  background:var(--navy);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;
+  box-shadow:0 8px 16px rgba(11,27,63,0.3);
+}
+.step-time{
+  display:inline-block;font-size:11px;letter-spacing:0.18em;
+  background:rgba(26,183,201,0.12);color:var(--cyan);
+  padding:5px 12px;border-radius:999px;margin-bottom:14px;font-weight:700;
+}
+.step h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.step p{font-size:14px;color:#56678a;line-height:2}
+@media (max-width:880px){.howto-grid{grid-template-columns:1fr}}
+
+/* ========== Proven Quality ========== */
+.proven{
+  padding:110px 0;color:#fff;
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 60%,var(--navy-3) 100%);
+  position:relative;overflow:hidden;
+}
+.proven::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 80% 20%,rgba(26,183,201,0.18),transparent 50%);
+}
+.proven .section-head h2,.proven .section-eyebrow{color:#fff}
+.proven .section-eyebrow{color:var(--gold-2)}
+.proven .section-head p{color:#bcc7e5}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;z-index:2}
+.stat{text-align:center;padding:30px 18px;background:rgba(255,255,255,0.04);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(10px)}
+.stat .big{
+  font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:700;color:var(--gold-2);line-height:1;
+}
+.stat .lbl{font-size:12px;letter-spacing:0.22em;color:#cad3eb;margin-top:10px}
+.press{margin-top:60px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:36px;opacity:0.65}
+.press span{font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:0.32em;color:#dde4f7;border:1px solid rgba(255,255,255,0.15);padding:10px 20px;border-radius:4px}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.stat .big{font-size:42px}}
+
+/* ========== Voice ========== */
+.voice{padding:110px 0;background:var(--off)}
+.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.v-card{
+  background:#fff;border-radius:16px;padding:30px 26px;
+  border:1px solid var(--line-d);
+  box-shadow:0 14px 36px -18px rgba(11,27,63,0.16);
+}
+.stars{color:var(--gold);margin-bottom:14px;font-size:15px;letter-spacing:0.1em}
+.v-quote{font-size:14.5px;line-height:2;color:#3a4663;margin-bottom:20px;font-weight:500}
+.v-meta{display:flex;align-items:center;gap:14px;font-size:12px;color:var(--mute);border-top:1px solid var(--line-d);padding-top:16px}
+.v-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--cyan));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-family:'Cormorant Garamond',serif;font-size:18px}
+@media (max-width:880px){.voice-grid{grid-template-columns:1fr}}
+
+/* ========== FAQ ========== */
+.faq{padding:110px 0;background:#fff}
+.faq-list{max-width:820px;margin:0 auto}
+.faq-item{
+  border-bottom:1px solid var(--line-d);
+  padding:22px 0;
+}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;gap:18px;
+  cursor:pointer;font-weight:700;color:var(--navy);font-size:16px;line-height:1.6;
+}
+.faq-q::before{content:"Q";font-family:'Cormorant Garamond',serif;color:var(--cyan);margin-right:14px;font-size:22px;font-weight:700;flex-shrink:0}
+.faq-toggle{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--off);color:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:700;flex-shrink:0;transition:transform .2s, background .2s;
+}
+.faq-item.open .faq-toggle{transform:rotate(45deg);background:var(--cyan);color:#fff}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height .35s ease, padding .35s ease;
+  font-size:14px;color:#56678a;line-height:2;padding-left:36px;
+}
+.faq-item.open .faq-a{max-height:400px;padding-top:14px}
+
+/* ========== Campaign ========== */
+.campaign{
+  background:linear-gradient(135deg,#1F3A2E,#0e2419);
+  color:#fff;padding:80px 0;text-align:center;position:relative;overflow:hidden;
+}
+.campaign::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 20% 50%,rgba(212,175,55,0.18),transparent 60%);
+}
+.camp-eyebrow{font-size:12px;letter-spacing:0.4em;color:var(--gold-2);margin-bottom:18px;position:relative;z-index:2}
+.camp-title{font-size:clamp(26px,3.6vw,40px);font-weight:900;margin-bottom:16px;position:relative;z-index:2;letter-spacing:0.04em}
+.camp-title em{font-style:normal;color:var(--gold-2)}
+.camp-sub{font-size:15px;color:#cdd9d2;margin-bottom:28px;position:relative;z-index:2}
+.camp-deadline{display:inline-block;background:rgba(255,107,53,0.15);color:var(--cta-2);border:1px solid rgba(255,107,53,0.45);padding:8px 18px;border-radius:999px;font-size:12px;letter-spacing:0.18em;margin-bottom:30px;position:relative;z-index:2;font-weight:700}
+
+/* ========== Final CTA ========== */
+.final-cta{
+  position:relative;color:#fff;overflow:hidden;padding:130px 0 110px;
+  background:var(--navy);
+}
+.final-bg{
+  position:absolute;inset:0;
+  background-image:url('./images/vector-marketing/concept_2.png');
+  background-size:cover;background-position:center;opacity:0.42;
+}
+.final-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(11,27,63,0.92) 0%,rgba(11,27,63,0.78) 60%,rgba(11,27,63,0.95) 100%);
+}
+.final-inner{position:relative;z-index:2;text-align:center;max-width:820px;margin:0 auto;padding:0 24px}
+.final-inner h2{font-size:clamp(28px,4.2vw,50px);font-weight:900;line-height:1.3;margin-bottom:22px;letter-spacing:0.02em}
+.final-inner h2 em{font-style:normal;color:var(--cyan-2)}
+.final-inner p{font-size:15px;color:#cad3eb;margin-bottom:36px;line-height:2}
+.guarantees{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-top:46px;font-size:13px;color:#dde4f7;letter-spacing:0.08em}
+.guarantee{display:flex;align-items:center;gap:8px}
+.guarantee::before{content:"✓";color:var(--cyan-2);font-weight:900}
+
+/* ========== Footer ========== */
+.footer{background:#06112b;color:#a7b3d4;padding:64px 0 130px;font-size:13px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:40px}
+.footer h4{font-size:12px;letter-spacing:0.22em;color:#fff;margin-bottom:18px}
+.footer ul{list-style:none}
+.footer li{margin-bottom:10px}
+.footer a:hover{color:var(--cyan-2)}
+.footer-disclaimer{
+  margin-top:36px;padding:22px;border:1px dashed rgba(255,107,53,0.4);
+  border-radius:10px;background:rgba(255,107,53,0.04);
+  font-size:12.5px;color:#ffd7ba;line-height:1.9;
+}
+.footer-disclaimer strong{color:var(--cta-2);letter-spacing:0.14em;margin-right:6px}
+.copyright{text-align:center;font-size:11px;color:#6a7799;border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;margin-top:32px;letter-spacing:0.12em}
+@media (max-width:880px){.footer-grid{grid-template-columns:1fr 1fr}}
+
+/* ========== Sticky Bottom CTA (mobile) ========== */
+.sticky-bottom{
+  display:none;
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  background:rgba(11,27,63,0.96);backdrop-filter:blur(8px);
+  padding:10px 14px;
+  box-shadow:0 -8px 24px rgba(0,0,0,0.4);
+  gap:8px;
+}
+.sticky-bottom .btn{flex:1;padding:14px 12px;font-size:13px;letter-spacing:0.06em}
+@media (max-width:760px){.sticky-bottom{display:flex}.footer{padding-bottom:110px}}
+</style>
+</head>
+<body>
+
+<!-- Demo Disclaimer Top -->
+<div class="demo-disclaimer">
+  <strong>CONCEPT DESIGN DEMO</strong> ｜ これはCVR最適化LPデザインのコンセプトデモです。架空ブランド「HORIZON Marketing Lab」を用いた実装サンプルであり、特定企業の公式サイトではありません。
+</div>
+
+<!-- Sticky Header -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo"><span class="logo-mark"></span>HORIZON</a>
+    <nav class="nav">
+      <a href="#skills">スキル</a>
+      <a href="#concept">特徴</a>
+      <a href="#services">サービス</a>
+      <a href="#proven">実績</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary btn-mini">無料診断を申し込む <span class="arrow">→</span></a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">B2B MARKETING PARTNER</div>
+    <h1 class="hero-title">広告費を上げず、<br><em>商談を倍にする。</em></h1>
+    <p class="hero-sub">戦略設計から広告運用、インサイドセールス、制作までを1つの統合チームで。「成果が出る打ち手だけを残す」HORIZONメソッドで、マーケティング投資のROIを最大化します。</p>
+    <div class="badges">
+      <div class="badge"><span class="num">150</span><span class="lbl">社の支援実績</span></div>
+      <div class="badge"><span class="num">+38<small style="font-size:18px">%</small></span><span class="lbl">平均CVR改善率</span></div>
+      <div class="badge"><span class="num">×2.4</span><span class="lbl">商談化率向上</span></div>
+    </div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">無料マーケティング診断 <span class="arrow">→</span></a>
+      <a href="#services" class="btn btn-ghost">サービス資料を見る</a>
+    </div>
+    <div class="hero-trust">▸ 初回相談料無料 ／ 営業電話なし ／ NDA対応可</div>
+  </div>
+</section>
+
+<!-- Pain Strip -->
+<section class="pain">
+  <div class="container">
+    <div class="pain-head">
+      <h2>こんな <span>マーケティングの停滞</span>、ありませんか？</h2>
+    </div>
+    <div class="pain-list">
+      <div class="pain-item"><div class="pain-x">×</div>広告費は増やすのに<br>売上が伸びない</div>
+      <div class="pain-item"><div class="pain-x">×</div>リードは取れるが<br>商談化しない</div>
+      <div class="pain-item"><div class="pain-x">×</div>ツールが多すぎて<br>使いこなせない</div>
+      <div class="pain-item"><div class="pain-x">×</div>営業とマーケが<br>分断している</div>
+      <div class="pain-item"><div class="pain-x">×</div>KPIが見えず<br>意思決定が遅い</div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Hexagon (核セクション) -->
+<section class="skills" id="skills">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">CORE CAPABILITIES</span>
+      <h2>1つのチームに、<em>6つの専門スキル</em>。</h2>
+      <p>HORIZON Marketing Labは、外注分散ではなく統合運用で成果を出します。戦略・データ・運用・コンテンツの境界を超え、6軸のスキルを同時に発揮する内製化されたチーム体制です。</p>
+    </div>
+    <div class="hex-wrap">
+      <svg class="hex-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+        <!-- Hexagon grid (3 rings) -->
+        <g fill="none" stroke="#cfd6e8" stroke-width="1">
+          <polygon points="300,80 491,190 491,410 300,520 109,410 109,190" />
+          <polygon points="300,140 439,220 439,380 300,460 161,380 161,220" />
+          <polygon points="300,200 387,250 387,350 300,400 213,350 213,250" />
+        </g>
+        <!-- axis lines -->
+        <g stroke="#cfd6e8" stroke-width="1">
+          <line x1="300" y1="80" x2="300" y2="520"/>
+          <line x1="109" y1="190" x2="491" y2="410"/>
+          <line x1="109" y1="410" x2="491" y2="190"/>
+        </g>
+        <!-- Filled radar polygon (sample scores) -->
+        <polygon points="300,100 470,200 460,395 300,490 130,400 140,205"
+                 fill="rgba(26,183,201,0.22)" stroke="#1AB7C9" stroke-width="2.5"/>
+        <!-- Score nodes -->
+        <g fill="#D4AF37" stroke="#0B1B3F" stroke-width="2">
+          <circle cx="300" cy="100" r="7"/>
+          <circle cx="470" cy="200" r="7"/>
+          <circle cx="460" cy="395" r="7"/>
+          <circle cx="300" cy="490" r="7"/>
+          <circle cx="130" cy="400" r="7"/>
+          <circle cx="140" cy="205" r="7"/>
+        </g>
+        <!-- Labels -->
+        <g font-family="Noto Sans JP, sans-serif" font-weight="700" fill="#0B1B3F" text-anchor="middle">
+          <text x="300" y="58" font-size="17">戦略立案</text>
+          <text x="300" y="40" font-size="11" fill="#1AB7C9" letter-spacing="2">STRATEGY</text>
+
+          <text x="525" y="190" font-size="17">データ分析</text>
+          <text x="525" y="172" font-size="11" fill="#1AB7C9" letter-spacing="2">ANALYTICS</text>
+
+          <text x="525" y="425" font-size="17">ツール選定</text>
+          <text x="525" y="443" font-size="11" fill="#1AB7C9" letter-spacing="2">MARTECH</text>
+
+          <text x="300" y="555" font-size="17">レポーティング</text>
+          <text x="300" y="573" font-size="11" fill="#1AB7C9" letter-spacing="2">REPORTING</text>
+
+          <text x="75" y="425" font-size="17">インサイドセールス</text>
+          <text x="75" y="443" font-size="11" fill="#1AB7C9" letter-spacing="2">INSIDE-SALES</text>
+
+          <text x="75" y="190" font-size="17">コンテンツ</text>
+          <text x="75" y="172" font-size="11" fill="#1AB7C9" letter-spacing="2">CONTENT</text>
+        </g>
+      </svg>
+      <div class="hex-center">
+        <img src="./images/vector-marketing/concept_1.png" alt="HORIZON チームの戦略討議">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Concept -->
+<section class="concept" id="concept">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">WHY HORIZON</span>
+      <h2>選ばれる、<em>3つの確かな理由</em>。</h2>
+      <p>「ツールを売る」のではなく、「成果が出る打ち手だけを残す」。HORIZONが他社と決定的に違う、3つの設計思想です。</p>
+    </div>
+    <div class="concept-grid">
+      <div class="c-card">
+        <div class="c-card-img"><img src="./images/vector-marketing/concept_1.png" alt="戦略討議"></div>
+        <div class="c-card-body">
+          <div class="c-num">01 / STRATEGY</div>
+          <h3>業界20年超の<br>グロースアーキテクト</h3>
+          <p>BtoB SaaS／製造／医療／金融、累計150社以上の支援経験を持つ専任ストラテジストが、初回から伴走。戦略立案を「外注の作業」ではなく「経営の意思決定」として組み立て直します。「広告費を上げず、商談を倍にする」根拠を最初の60分で示します。</p>
+        </div>
+      </div>
+      <div class="c-card">
+        <div class="c-card-img"><img src="./images/vector-marketing/concept_2.png" alt="データダッシュボード"></div>
+        <div class="c-card-body">
+          <div class="c-num">02 / DATA</div>
+          <h3>120以上の<br>マーテックパートナー</h3>
+          <p>MA・CRM・CDP・広告プラットフォームを中立に評価。御社の事業フェーズに最適な構成だけを選定し、不要な契約を最大40%削減した実績があります。</p>
+        </div>
+      </div>
+      <div class="c-card">
+        <div class="c-card-img"><img src="./images/vector-marketing/concept_3.png" alt="信頼のパートナーシップ"></div>
+        <div class="c-card-body">
+          <div class="c-num">03 / CRO</div>
+          <h3>CVR起点の<br>逆算プランニング</h3>
+          <p>「リード数」ではなく「商談化率」「受注率」から逆算してKPIを設計。施策の優先順位を変えるだけで、3ヶ月で平均CVR +38%の改善を実現しています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">SERVICES</span>
+      <h2>必要な領域だけを、<em>必要な深さで</em>。</h2>
+      <p>戦略から実行まで、ご支援内容は単発から長期伴走までモジュール選択可能です。</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc-card">
+        <div class="svc-img"><img loading="lazy" src="./images/vector-marketing/service_strategy.png" alt="戦略コンサルティング"></div>
+        <span class="svc-tag gold">CORE</span>
+        <div class="svc-body">
+          <h3>戦略コンサルティング</h3>
+          <p>ファネル設計・KPIツリー再構築・年間ロードマップ策定。経営層と直接議論し、3ヶ月で「数字で語れる」マーケ体制を構築します。</p>
+          <div class="svc-meta"><span>3ヶ月伴走〜</span><span class="price">お問合せ →</span></div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-img"><img loading="lazy" src="./images/vector-marketing/service_ads.png" alt="広告運用"></div>
+        <span class="svc-tag">PERFORMANCE</span>
+        <div class="svc-body">
+          <h3>広告運用 & アナリティクス</h3>
+          <p>Google／Meta／LinkedIn／X 広告の運用と効果検証。クリエイティブから入札戦略まで一気通貫で、平均ROASは3.2倍を実証。</p>
+          <div class="svc-meta"><span>月次レポート付</span><span class="price">お問合せ →</span></div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-img"><img loading="lazy" src="./images/vector-marketing/service_inside_sales.png" alt="インサイドセールス"></div>
+        <span class="svc-tag">CONVERSION</span>
+        <div class="svc-body">
+          <h3>インサイドセールス支援</h3>
+          <p>リードナーチャリングから商談化までを内製チームと共同設計。トークスクリプト・MA設定・架電チーム派遣まで対応可能です。</p>
+          <div class="svc-meta"><span>立上3週間〜</span><span class="price">お問合せ →</span></div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-img"><img loading="lazy" src="./images/vector-marketing/concept_2.png" alt="マーケDX"></div>
+        <span class="svc-tag">MARTECH</span>
+        <div class="svc-body">
+          <h3>マーケDX / ツール選定</h3>
+          <p>MA・CRM・SFA・CDP の中立評価と導入支援。120以上のパートナーから「事業フェーズに合う最小構成」だけを提案します。</p>
+          <div class="svc-meta"><span>初回診断 無料</span><span class="price">お問合せ →</span></div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-img"><img loading="lazy" src="./images/vector-marketing/concept_3.png" alt="動画プロモーション"></div>
+        <span class="svc-tag">CREATIVE</span>
+        <div class="svc-body">
+          <h3>動画プロモーション</h3>
+          <p>展示会用ブランド動画から、CV直結のショート広告動画まで。CVR起点の脚本構成で、再生回数より「商談数」を作ります。</p>
+          <div class="svc-meta"><span>3週間納品〜</span><span class="price">お問合せ →</span></div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-img"><img loading="lazy" src="./images/vector-marketing/service_strategy.png" alt="制作支援"></div>
+        <span class="svc-tag">PRODUCTION</span>
+        <div class="svc-body">
+          <h3>LP & クリエイティブ制作</h3>
+          <p>LP・パンフレット・展示会パネル・営業資料の制作。「制作だけ」ではなくCVR検証フェーズまで含めた一気通貫体制です。</p>
+          <div class="svc-meta"><span>2週間納品〜</span><span class="price">お問合せ →</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- How to Start -->
+<section class="howto">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">HOW TO START</span>
+      <h2>最短3週間で、<em>成果の手応え</em>を。</h2>
+      <p>無料の60分マーケティング診断から、最短3週間で初回施策に着手します。</p>
+    </div>
+    <div class="howto-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-time">DAY 0 — 60分</div>
+        <h3>無料マーケティング診断</h3>
+        <p>専任ストラテジストが現状ヒアリング。KPI／ファネル／予算配分を整理し、改善余地を可視化します。</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-time">DAY 1-14 — 2週間</div>
+        <h3>戦略 & 施策プラン提案</h3>
+        <p>診断結果に基づき、優先順位・期待ROI・必要工数を明示した提案書をお出しします。比較検討用に複数案を提示。</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-time">DAY 15- — 開始</div>
+        <h3>キックオフ & 実行</h3>
+        <p>御社チームと統合プロジェクトとして始動。週次の数字レビューと月次の経営報告で意思決定を加速します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Proven Quality -->
+<section class="proven" id="proven">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">PROVEN QUALITY</span>
+      <h2>数字で語れる、<br>マーケティング成果。</h2>
+      <p>HORIZON Marketing Labが3年間で積み上げた、実証ベースの支援実績です。</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="big">150<small style="font-size:22px">社</small></div><div class="lbl">累計支援企業</div></div>
+      <div class="stat"><div class="big">+38<small style="font-size:22px">%</small></div><div class="lbl">平均CVR改善率</div></div>
+      <div class="stat"><div class="big">×2.4</div><div class="lbl">商談化率向上</div></div>
+      <div class="stat"><div class="big">92<small style="font-size:22px">%</small></div><div class="lbl">年間継続率</div></div>
+    </div>
+    <div class="press">
+      <span>MARKETING SUMMIT 2024</span>
+      <span>B2B GROWTH AWARDS</span>
+      <span>MARTECH JAPAN</span>
+    </div>
+  </div>
+</section>
+
+<!-- Voice -->
+<section class="voice">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">CLIENT VOICE</span>
+      <h2>支援企業からの<em>実証コメント</em>。</h2>
+    </div>
+    <div class="voice-grid">
+      <div class="v-card">
+        <div class="stars">★★★★★</div>
+        <p class="v-quote">「広告費はそのままで、商談数が3ヶ月で1.9倍に。ファネル可視化と運用見直しの組み合わせが効きました。営業会議で『マーケティングの数字』を語れるようになったのが一番の成果です。」</p>
+        <div class="v-meta"><div class="v-avatar">A</div><div>製造業A社 マーケティング部長 / 50代</div></div>
+      </div>
+      <div class="v-card">
+        <div class="stars">★★★★★</div>
+        <p class="v-quote">「MAツールを入れたが活用できない、という典型的な状態でした。HORIZONに『使う前提の運用設計』をやり直してもらい、半年でリードナーチャリングが回り始めました。」</p>
+        <div class="v-meta"><div class="v-avatar">B</div><div>SaaS事業B社 CMO / 40代</div></div>
+      </div>
+      <div class="v-card">
+        <div class="stars">★★★★★</div>
+        <p class="v-quote">「『成果が出る施策しかやらない』という姿勢が他社と決定的に違いました。提案を受けて止めた施策もあり、結果として年間予算を23%削減しながらリード獲得は前年比＋40%です。」</p>
+        <div class="v-meta"><div class="v-avatar">C</div><div>医療系C社 経営企画室長 / 40代</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">FAQ</span>
+      <h2>よくある<em>ご質問</em>。</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>初回診断は本当に無料ですか？</span><span class="faq-toggle">+</span></div>
+        <div class="faq-a">はい、60分の無料マーケティング診断は完全無料です。営業電話・しつこいフォローアップは一切ございません。診断後に発注しないご判断も歓迎しております。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>どの規模の企業に合いますか？</span><span class="faq-toggle">+</span></div>
+        <div class="faq-a">マーケティング年間予算 1,000万円〜の中堅・中小〜エンタープライズが中心です。スタートアップでも、明確な成長フェーズに入った企業はご相談ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>既存の代理店・ベンダーとの並走は可能ですか？</span><span class="faq-toggle">+</span></div>
+        <div class="faq-a">可能です。既存パートナーを尊重した上で、戦略レイヤー／実行レイヤーの役割整理から伴走します。「全リプレース」を前提にしません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>契約期間の縛りはありますか？</span><span class="faq-toggle">+</span></div>
+        <div class="faq-a">最短3ヶ月から、1ヶ月単位での更新が可能です。年間契約による割引制度もご用意していますが、強制ではありません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>レポートはどの頻度で受け取れますか？</span><span class="faq-toggle">+</span></div>
+        <div class="faq-a">原則として、週次の数字レビュー＋月次の経営報告書をご提供します。Slack／Teams での日次相談も標準範囲です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>NDA や情報セキュリティ対応は？</span><span class="faq-toggle">+</span></div>
+        <div class="faq-a">NDA 締結はもちろん、ISMS 準拠のセキュリティ運用、御社規定の情報管理体制への適合も対応可能です。詳細は個別にご相談ください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Campaign -->
+<section class="campaign">
+  <div class="container">
+    <div class="camp-eyebrow">LIMITED CAMPAIGN</div>
+    <div class="camp-deadline">2026年6月末日まで・先着10社限定</div>
+    <h2 class="camp-title">初月「<em>マーケティング診断 + KPIツリー再設計</em>」 無料</h2>
+    <p class="camp-sub">通常 ¥350,000 相当の戦略診断パッケージを、新規ご相談企業様に限り無料でご提供します。</p>
+    <a href="#contact" class="btn btn-primary" onclick="alert('これはコンセプトデモです。実際の申込フォームは公開されておりません。');return false;">今すぐ無料診断を申し込む <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta" id="contact">
+  <div class="final-bg"></div>
+  <div class="final-overlay"></div>
+  <div class="final-inner">
+    <span class="section-eyebrow" style="color:var(--gold-2)">START YOUR GROWTH</span>
+    <h2>マーケティングの<br><em>次の一手</em>を、一緒に決めませんか。</h2>
+    <p>60分の無料診断で、現状のKPI・ファネル・施策の優先順位を一緒に整理します。<br>営業電話は一切ございません。提案後の発注判断は自由です。</p>
+    <a href="#" class="btn btn-primary" onclick="alert('これはコンセプトデモです。実際の申込フォームは公開されておりません。');return false;" style="padding:20px 44px;font-size:16px">無料マーケティング診断を申し込む <span class="arrow">→</span></a>
+    <div class="guarantees">
+      <span class="guarantee">初回相談 完全無料</span>
+      <span class="guarantee">営業電話 一切なし</span>
+      <span class="guarantee">提案後の自由判断</span>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color:#fff;margin-bottom:14px"><span class="logo-mark"></span>HORIZON</div>
+        <p style="font-size:12px;line-height:1.9;color:#8b9ab8">HORIZON Marketing Lab（架空ブランド）<br>B2Bマーケティング統合支援のコンセプトデモLP</p>
+      </div>
+      <div>
+        <h4>SERVICES</h4>
+        <ul>
+          <li><a href="#services">戦略コンサルティング</a></li>
+          <li><a href="#services">広告運用 & 分析</a></li>
+          <li><a href="#services">インサイドセールス</a></li>
+          <li><a href="#services">マーケDX / ツール選定</a></li>
+          <li><a href="#services">動画 & クリエイティブ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>COMPANY</h4>
+        <ul>
+          <li>東京都港区（架空）</li>
+          <li>Established 2024（架空）</li>
+          <li>info@vector-mktg-lab.example</li>
+        </ul>
+      </div>
+      <div>
+        <h4>RESOURCES</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#proven">実績データ</a></li>
+          <li><a href="#contact">無料診断申込</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      <strong>CONCEPT DESIGN DEMO — DISCLAIMER</strong>
+      本ページは、CVR最適化を目的としたLPデザインのコンセプトデモです。「HORIZON Marketing Lab」は架空のブランドであり、実在企業・実在商品・実在人物・実在のサービス価格とは一切関係ありません。掲載されている数値（150社支援・CVR+38%・商談化率×2.4倍 等）はデザイン上のサンプルであり、特定企業の実績を表すものではありません。商品・サービス画像はAI（gpt-image-2）により生成された架空のビジュアルです。本デモは特定企業のリブランド提案であり、実在のサービス提供を目的としたものではありません。
+    </div>
+    <div class="copyright">© 2026 CONCEPT DEMO — Built with Claude Code + Codex CLI. Powered by gpt-image-2.</div>
+  </div>
+</footer>
+
+<!-- Sticky Bottom CTA (mobile) -->
+<div class="sticky-bottom">
+  <a href="#contact" class="btn btn-ghost">資料ダウンロード</a>
+  <a href="#contact" class="btn btn-primary">無料診断 →</a>
+</div>
+
+<script>
+  // Smooth-scroll & FAQ animation only; no external dependencies
+</script>
+</body>
+</html>
